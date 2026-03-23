@@ -1,0 +1,75 @@
+{
+  "expo": {
+    "name": "SafeRoad",
+    "slug": "safaroad",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "scheme": "safaroad",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0a0a0f"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "app.safaroad.mobile",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "SafeRoad needs your location to report and track potholes.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "SafeRoad needs background location access to alert you of nearby potholes.",
+        "NSCameraUsageDescription": "SafeRoad needs camera access to take photos of potholes.",
+        "NSPhotoLibraryUsageDescription": "SafeRoad needs photo library access to upload pothole images.",
+        "UIBackgroundModes": ["location", "fetch", "remote-notification"]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0a0a0f"
+      },
+      "package": "app.safaroad.mobile",
+      "permissions": [
+        "CAMERA",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "RECEIVE_BOOT_COMPLETED",
+        "VIBRATE",
+        "INTERNET",
+        "ACCESS_NETWORK_STATE"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow SafeRoad to use your location to track potholes and alert you of nearby hazards."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#ff4444",
+          "sounds": [
+            "./assets/alert-sound.wav"
+          ]
+        }
+      ],
+      [
+        "expo-sensors",
+        {
+          "motionPermission": "Allow SafeRoad to access motion sensors to detect road bumps and potholes."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
