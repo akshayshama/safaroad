@@ -1,26 +1,20 @@
-import { defineConfig } from 'vercel'
-
-export default defineConfig({
-  builds: [
+{
+  "builds": [
     { 
-      src: 'package.json', 
-      use: '@vercel/static-build', 
-      config: { 
-        distDir: 'dist' 
+      "src": "package.json", 
+      "use": "@vercel/static-build", 
+      "config": { 
+        "distDir": "dist" 
       } 
     }
   ],
-  routes: [
+  "routes": [
     { 
-      handle: 'filesystem' 
+      "handle": "filesystem" 
     },
     {
-      src: '/(.*)',
-      dest: '/index.html'
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
-  ],
-  env: {
-    VITE_API_URL: '@safaroad-api-url'
-  },
-  regions: ['bom1']
-})
+  ]
+}
